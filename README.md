@@ -1,22 +1,22 @@
 
-# ngx-cookieconsent
+# ngx-cookieconsent-v2
 
-[![npm version](https://badge.fury.io/js/ngx-cookieconsent.svg)](https://badge.fury.io/js/ngx-cookieconsent)
-[![Build Status](https://travis-ci.org/tinesoft/ngx-cookieconsent.svg?branch=master)](https://travis-ci.org/tinesoft/ngx-cookieconsent)
-[![Coverage Status](https://coveralls.io/repos/github/tinesoft/ngx-cookieconsent/badge.svg?branch=master)](https://coveralls.io/github/tinesoft/ngx-cookieconsent?branch=master)
-[![dependency Status](https://david-dm.org/tinesoft/ngx-cookieconsent/status.svg)](https://david-dm.org/tinesoft/ngx-cookieconsent)
-[![devDependency Status](https://david-dm.org/tinesoft/ngx-cookieconsent/dev-status.svg?branch=master)](https://david-dm.org/tinesoft/ngx-cookieconsent#info=devDependencies)
-[![Greenkeeper Badge](https://badges.greenkeeper.io/tinesoft/ngx-cookieconsent.svg)](https://greenkeeper.io/)
+[![npm version](https://badge.fury.io/js/ngx-cookieconsent-v2.svg)](https://badge.fury.io/js/ngx-cookieconsent-v2)
+[![Build Status](https://travis-ci.org/abdul/ngx-cookieconsent-v2.svg?branch=master)](https://travis-ci.org/abdul/ngx-cookieconsent-v2)
+[![Coverage Status](https://coveralls.io/repos/github/abdul/ngx-cookieconsent-v2/badge.svg?branch=master)](https://coveralls.io/github/abdul/ngx-cookieconsent-v2?branch=master)
+[![dependency Status](https://david-dm.org/abdul/ngx-cookieconsent-v2/status.svg)](https://david-dm.org/abdul/ngx-cookieconsent-v2)
+[![devDependency Status](https://david-dm.org/abdul/ngx-cookieconsent-v2/dev-status.svg?branch=master)](https://david-dm.org/abdul/ngx-cookieconsent-v2#info=devDependencies)
+[![Greenkeeper Badge](https://badges.greenkeeper.io/abdul/ngx-cookieconsent-v2.svg)](https://greenkeeper.io/)
 
 > [Cookie Consent](https://cookieconsent.insites.com/) module for Angular
 
 <p align="center">
-  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.jsdelivr.net/gh/tinesoft/ngx-cookieconsent@master/demo/src/assets/logo.svg">
+  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.jsdelivr.net/gh/abdul/ngx-cookieconsent-v2@master/demo/src/assets/logo.svg">
 </p>
 
 ## Demo
 
-View the module in action at https://tinesoft.github.io/ngx-cookieconsent
+View the module in action at https://abdul.github.io/ngx-cookieconsent-v2
 
 ## Dependencies
 
@@ -35,14 +35,14 @@ npm install --save cookieconsent
 yarn add cookieconsent
 ```
 
-Now install `ngx-cookieconsent` via:
+Now install `ngx-cookieconsent-v2` via:
 
 ```shell
-npm install --save ngx-cookieconsent
+npm install --save ngx-cookieconsent-v2
 
 // or
 
-yarn add ngx-cookieconsent
+yarn add ngx-cookieconsent-v2
 ```
 
 ---
@@ -65,10 +65,10 @@ To do so, edit your `angular.json` as such:
 ##### SystemJS
 
 >**Note**:If you are using `SystemJS`, you should adjust your configuration to point to the UMD bundle.
-In your systemjs config file, `map` needs to tell the System loader where to look for `ngx-cookieconsent`:
+In your systemjs config file, `map` needs to tell the System loader where to look for `ngx-cookieconsent-v2`:
 ```js
 map: {
-  'ngx-cookieconsent': 'node_modules/ngx-cookieconsent/bundles/ngx-cookieconsent.umd.js',
+  'ngx-cookieconsent-v2': 'node_modules/ngx-cookieconsent-v2/bundles/ngx-cookieconsent-v2.umd.js',
 }
 ```
 In your systemjs config file, `meta` needs to tell the System loader how to load `cookieconsent`:
@@ -95,14 +95,14 @@ In your index.html file, add script and link tags to load  `cookieconsent` globa
 Once installed you need to import the main module:
 
 ```ts
-import {NgcCookieConsentModule} from 'ngx-cookieconsent';
+import {NgcCookieConsentModule} from 'ngx-cookieconsent-v2';
 ```
 
 The only remaining part is to list the imported module in your application module. The exact method will be slightly
 different for the root (top-level) module for which you should end up with the code similar to (notice `NgcCookieConsentModule.forRoot()`):
 
 ```ts
-import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent';
+import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent-v2';
 
 const cookieConfig:NgcCookieConsentConfig = {
   cookie: {
@@ -133,7 +133,7 @@ export class AppModule {
 Other modules in your application can simply import `NgcCookieConsentModule`:
 
 ```ts
-import {NgcCookieConsentModule} from 'ngx-cookieconsent';
+import {NgcCookieConsentModule} from 'ngx-cookieconsent-v2';
 
 @NgModule({
   declarations: [OtherComponent, ...],
@@ -153,7 +153,7 @@ Here is how it works:
 
 ```ts
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NgcCookieConsentService } from 'ngx-cookieconsent';
+import { NgcCookieConsentService } from 'ngx-cookieconsent-v2';
 import { Subscription }   from 'rxjs';
 
 @Component({
@@ -262,7 +262,7 @@ Basically this involved the following steps (using ngx-translate + Anglar CLI):
 }
 ```
 
-> **Note:** see [content-options.ts](https://github.com/tinesoft/ngx-cookieconsent/blob/master/src/model/content-options.ts) for complete list of messages that can be translated.
+> **Note:** see [content-options.ts](https://github.com/abdul/ngx-cookieconsent-v2/blob/master/src/model/content-options.ts) for complete list of messages that can be translated.
 
 * Configure your main component `AppComponent`
 
@@ -311,22 +311,22 @@ export class AppComponent {
 
 ## Custom Layout Support
 
-Cookie Consent supports [custom layouts](https://cookieconsent.insites.com/documentation/javascript-api/#layout_options), and so does `ngx-cookieconsent`.
+Cookie Consent supports [custom layouts](https://cookieconsent.insites.com/documentation/javascript-api/#layout_options), and so does `ngx-cookieconsent-v2`.
 So if your are not happy with the default appearance of the cookie bar, you can totally customize it to better suit your needs. This involves overriding a few options:
 
-* [NgcCookieConsentConfig.layout](https://github.com/tinesoft/ngx-cookieconsent/blob/master/src/service/cookieconsent-config.ts#L78): to define the name of your custom layout to use. For e.g `my-custom-layout`
-* [NgcCookieConsentConfig.layouts](https://github.com/tinesoft/ngx-cookieconsent/blob/master/src/service/cookieconsent-config.ts#L73): to define your custom layout HTML. Elements between `{{` and `}}` will be replaced by their content (see in `[NgcCookieConsentConfig.content` below)
-* [NgcCookieConsentConfig.elements](https://github.com/tinesoft/ngx-cookieconsent/blob/master/src/model/cookieconsent-config.ts#L44) : html elements referenced in the custom layout (between `{{` and `}}`)
-* [NgcCookieConsentConfig.content](https://github.com/tinesoft/ngx-cookieconsent/blob/master/src/model/cookieconsent-config.ts#L36) : content of elements referenced in the custom elements above (between `{{` and `}}`)
+* [NgcCookieConsentConfig.layout](https://github.com/abdul/ngx-cookieconsent-v2/blob/master/src/service/cookieconsent-config.ts#L78): to define the name of your custom layout to use. For e.g `my-custom-layout`
+* [NgcCookieConsentConfig.layouts](https://github.com/abdul/ngx-cookieconsent-v2/blob/master/src/service/cookieconsent-config.ts#L73): to define your custom layout HTML. Elements between `{{` and `}}` will be replaced by their content (see in `[NgcCookieConsentConfig.content` below)
+* [NgcCookieConsentConfig.elements](https://github.com/abdul/ngx-cookieconsent-v2/blob/master/src/model/cookieconsent-config.ts#L44) : html elements referenced in the custom layout (between `{{` and `}}`)
+* [NgcCookieConsentConfig.content](https://github.com/abdul/ngx-cookieconsent-v2/blob/master/src/model/cookieconsent-config.ts#L36) : content of elements referenced in the custom elements above (between `{{` and `}}`)
 
 Here is a example of a **custom layout**, that is inspired from the default 'basic' layout , but simply changes the message and links that are displayed in the bar.
 
 <p align="center">
-  <img style="text-align: center;" src="https://cdn.rawgit.com/tinesoft/ngx-cookieconsent/master/demo/src/assets/custom-cookie-bar.png">
+  <img style="text-align: center;" src="https://cdn.rawgit.com/abdul/ngx-cookieconsent-v2/master/demo/src/assets/custom-cookie-bar.png">
 </p>
 
 ```ts
-import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent';
+import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent-v2';
 
 const cookieConfig:NgcCookieConsentConfig = {
   cookie: {
@@ -392,7 +392,7 @@ Every Nx plugin relies on the underlying Nx Workspace/DevKit it runs on. This ta
 
 ## Credits
 
-`ngx-cookieconsent` is built upon [Cookie Consent](https://www.osano.com/cookieconsent/), by [Osano](https://osano.com)
+`ngx-cookieconsent-v2` is built upon [Cookie Consent](https://www.osano.com/cookieconsent/), by [Osano](https://osano.com)
 
 ## License
 

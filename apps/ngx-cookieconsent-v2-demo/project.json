@@ -1,0 +1,193 @@
+{
+  "name": "ngx-cookieconsent-v2-demo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/ngx-cookieconsent-v2-demo/src",
+  "prefix": "ngc-demo",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/ngx-cookieconsent-v2-demo/browser",
+        "index": "apps/ngx-cookieconsent-v2-demo/src/index.html",
+        "main": "apps/ngx-cookieconsent-v2-demo/src/main.ts",
+        "polyfills": "apps/ngx-cookieconsent-v2-demo/src/polyfills.ts",
+        "tsConfig": "apps/ngx-cookieconsent-v2-demo/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/ngx-cookieconsent-v2-demo/src/favicon.ico",
+          "apps/ngx-cookieconsent-v2-demo/src/assets"
+        ],
+        "styles": [
+          "apps/ngx-cookieconsent-v2-demo/src/styles.scss",
+          "node_modules/prismjs/themes/prism-okaidia.css"
+        ],
+        "scripts": [
+          "node_modules/cookieconsent/build/cookieconsent.min.js",
+          "node_modules/marked/marked.min.js",
+          "node_modules/prismjs/prism.js",
+          "node_modules/prismjs/components/prism-json.min.js",
+          "node_modules/prismjs/components/prism-typescript.min.js"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/ngx-cookieconsent-v2-demo/src/environments/environment.ts",
+              "with": "apps/ngx-cookieconsent-v2-demo/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "ngx-cookieconsent-v2-demo:build:production"
+        },
+        "development": {
+          "browserTarget": "ngx-cookieconsent-v2-demo:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/ngx-cookieconsent-v2-demo/src/proxy.conf.json"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "ngx-cookieconsent-v2-demo:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/ngx-cookieconsent-v2-demo/src/**/*.ts",
+          "apps/ngx-cookieconsent-v2-demo/src/**/*.html"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/ngx-cookieconsent-v2-demo"],
+      "options": {
+        "jestConfig": "apps/ngx-cookieconsent-v2-demo/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "server": {
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/ngx-cookieconsent-v2-demo/server",
+        "main": "apps/ngx-cookieconsent-v2-demo/server.ts",
+        "tsConfig": "apps/ngx-cookieconsent-v2-demo/tsconfig.server.json",
+        "inlineStyleLanguage": "scss"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "replace": "apps/ngx-cookieconsent-v2-demo/src/environments/environment.ts",
+              "with": "apps/ngx-cookieconsent-v2-demo/src/environments/environment.prod.ts"
+            }
+          ]
+        },
+        "development": {
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "production": {
+        "outputHashing": "media",
+        "fileReplacements": [
+          {
+            "replace": "apps/ngx-cookieconsent-v2-demo/src/environments/environment.ts",
+            "with": "apps/ngx-cookieconsent-v2-demo/src/environments/environment.prod.ts"
+          }
+        ]
+      },
+      "development": {
+        "optimization": false,
+        "sourceMap": true,
+        "extractLicenses": false
+      }
+    },
+    "serve-ssr": {
+      "executor": "@nguniversal/builders:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "ngx-cookieconsent-v2-demo:build:development",
+          "serverTarget": "ngx-cookieconsent-v2-demo:server:development"
+        },
+        "production": {
+          "browserTarget": "ngx-cookieconsent-v2-demo:build:production",
+          "serverTarget": "ngx-cookieconsent-v2-demo:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@nguniversal/builders:prerender",
+      "options": {
+        "routes": ["/"]
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "ngx-cookieconsent-v2-demo:build:production"
+        },
+        "development": {
+          "browserTarget": "ngx-cookieconsent-v2-demo:build:development"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "predeploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npx nx build ngx-cookieconsent-v2-demo --base-href /ngx-cookieconsent-v2/ --deploy-url /ngx-cookieconsent-v2/",
+          "npx nx compodoc ngx-cookieconsent-v2"
+        ],
+        "parallel": false
+      }
+    },
+    "deploy": {
+      "executor": "@nx-dotnet/nx-ghpages:deploy",
+      "options": {
+        "remote": "https://github.com/abdul/ngx-cookieconsent-v2.git",
+        "directory": "dist/ngx-cookieconsent-v2-demo/browser"
+      }
+    }
+  },
+  "tags": []
+}

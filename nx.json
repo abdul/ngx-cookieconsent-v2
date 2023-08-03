@@ -11,15 +11,15 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": ["build", "test", "compodoc"],
-        "accessToken": "MjE0OWQ1M2ItNTFjOC00ZDU4LWIzYzgtOWQzODZjNmFlYjhifHJlYWQtd3JpdGU="
+        "accessToken": "NTQ2YjNmYWMtMzhkMi00ZjY3LTk5NjMtNzQwYzcwM2ZhMTA2fHJlYWQtd3JpdGU="
       }
     }
   },
   "affected": {
     "defaultBase": "develop"
   },
-  "npmScope": "ngx-cookieconsent",
-  "defaultProject": "ngx-cookieconsent-demo",
+  "npmScope": "ngx-cookieconsent-v2",
+  "defaultProject": "ngx-cookieconsent-v2-demo",
   "generators": {
     "@nrwl/angular": {
       "application": {
@@ -49,13 +49,20 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "release": {
-      "dependsOn": ["build", "^release"]
+      "dependsOn": [
+        "build",
+        "^release"
+      ]
     },
     "deploy": {
-      "dependsOn": ["predeploy"]
+      "dependsOn": [
+        "predeploy"
+      ]
     }
   }
 }

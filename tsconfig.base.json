@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "ngx-cookieconsent": ["libs/ngx-cookieconsent/src/index.ts"]
+      "ngx-cookieconsent-v2": ["libs/ngx-cookieconsent-v2/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
